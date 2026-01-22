@@ -1,11 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antenas Service</title>
+    <title>TeleAntenas - Instalación de Antenas de Telecomunicaciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header/Navbar */
+        header {
+            background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5722;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0052cc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #0052cc;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            background-color: #f5f5f5;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            padding: 1.5rem;
+            background: white;
+            border-left: 4px solid #ff6b35;
+            border-radius: 4px;
+        }
+
+        .benefit-item h4 {
+            color: #0052cc;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #0052cc;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003d99;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>Antenas Service</div>
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo">🛰️ TeleAntenas</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Soluciones en Antenas de Telecomunicaciones</h1>
+            <p>Conectamos tu negocio con la mejor tecnología de comunicaciones</p>
+            <button class="cta-button">Solicitar Presupuesto</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Section -->
+        <section class="services" id="servicios">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>Instalación de Antenas</h3>
+                    <p>Instalación profesional de antenas de telecomunicaciones con equipos de última generación. Garantizamos la máxima cobertura y señal óptima en tu ubicación.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Mantenimiento y Servicio</h3>
+                    <p>Mantenimiento preventivo y correctivo de sistemas de antenas. Disponibilidad 24/7 para resolver cualquier inconveniente en tu infraestructura.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Diseño de Sistemas</h3>
+                    <p>Diseño personalizado de sistemas de telecomunicaciones según tus necesidades específicas. Evaluación técnica gratuita de tu localización.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Estudio de Cobertura</h3>
+                    <p>Análisis detallado de cobertura de señal con equipamiento especializado. Reportes técnicos completos y recomendaciones de optimización.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Cableado e Infraestructura</h3>
+                    <p>Instalación de cableado de alta frecuencia y estructuras de soporte. Materiales de calidad industrial con garantía de durabilidad.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>Consultoría Técnica</h3>
+                    <p>Asesoramiento técnico especializado para proyectos de telecomunicaciones. Optimización de sistemas existentes y auditorías de rendimiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us" id="ventajas">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <h4>✓ Experiencia Certificada</h4>
+                        <p>Más de 15 años en la industria de telecomunicaciones con certificaciones internacionales.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>✓ Equipo Profesional</h4>
+                        <p>Técnicos especializados y capacitados en las últimas tecnologías del mercado.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>✓ Garantía Total</h4>
+                        <p>Garantía en materiales y mano de obra. Servicio de post-venta incluido.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>✓ Disponibilidad 24/7</h4>
+                        <p>Soporte técnico disponible todos los días para resolver emergencias rápidamente.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>✓ Precios Competitivos</h4>
+                        <p>Las mejores tarifas del mercado sin comprometer la calidad del servicio.</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <h4>✓ Compromiso Ambiental</h4>
+                        <p>Prácticas sustentables en todas nuestras operaciones y instalaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2>¡Contáctanos Hoy!</h2>
+            <p>Nuestro equipo está listo para ayudarte con cualquier consulta sobre instalación de antenas</p>
+            <p>
+                📞 Teléfono: +54 (11) XXXX-XXXX<br>
+                📧 Email: info@teleantenas.com<br>
+                📍 Disponible en toda la región
+            </p>
+            <button class="cta-button">Enviar Consulta</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 TeleAntenas. Todos los derechos reservados. | Soluciones en Telecomunicaciones</p>
+    </footer>
 </body>
 </html>
