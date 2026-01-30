@@ -3,206 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeleAntenas - Conectividad Profesional</title>
+    <title>FM & Asociados</title>
+
+    <link rel="icon" type="image/png" href="LOGO.png" />
+
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo">🛰️ TeleAntenas</div>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#nuestros-servicios">Servicios</a></li>
-          <li><a href="#servicios">Proyectos</a></li>
-          <li><a href="#ventajas">Nosotros</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
+  <body id="top">
+    <header id="main-header">
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="#top" class="logo-link">
+            <img src="LOGO.png" alt="Icono FM" class="logo-img" />
+            <span class="logo-text">Fm & Asociados</span>
+          </a>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="#top">Inicio</a></li>
+            <li><a href="#nuestros-servicios">Servicios</a></li>
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#ventajas">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
-    <section class="hero" id="inicio">
+    <section class="hero">
       <div class="hero-content">
         <h1>Soluciones en Antenas de Telecomunicaciones</h1>
-        <p>Conectamos tu negocio con la mejor tecnología de comunicaciones</p>
-      </div>
-    </section>
-
-    <main>
-      <section class="services-overview" id="nuestros-servicios">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-          <div class="service-card service-highlight">
-            <div class="icon-container">
-              <i class="fas fa-satellite-dish"></i>
-            </div>
-            <h3>Instalación de Antenas</h3>
-            <p>
-              Montaje especializado de sistemas satelitales y de radiofrecuencia
-              para hogares y empresas, garantizando la mejor recepción de señal.
-            </p>
-          </div>
-
-          <div class="service-card service-highlight">
-            <div class="icon-container">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <h3>Optimización de Redes</h3>
-            <p>
-              Análisis de cobertura y configuración de repetidores para eliminar
-              puntos ciegos en tu infraestructura de comunicaciones.
-            </p>
-          </div>
-
-          <div class="service-card service-highlight">
-            <div class="icon-container">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>Mantenimiento Preventivo</h3>
-            <p>
-              Revisión técnica de estructuras y cableados para prevenir caídas
-              de servicio y asegurar la longevidad de tus equipos.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="services" id="servicios">
-        <h2 class="section-title">Nuestros Proyectos Recientes</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj1/400/250"
-              alt="Proyecto 1"
-              class="card-img"
-            />
-            <h3>Proyecto 1</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj2/400/250"
-              alt="Proyecto 2"
-              class="card-img"
-            />
-            <h3>Proyecto 2</h3>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip x ea commodo consequat.
-            </p>
-          </div>
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj3/400/250"
-              alt="Proyecto 3"
-              class="card-img"
-            />
-            <h3>Proyecto 3</h3>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </div>
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj4/400/250"
-              alt="Proyecto 4"
-              class="card-img"
-            />
-            <h3>Proyecto 4</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
-            </p>
-          </div>
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj5/400/250"
-              alt="Proyecto 5"
-              class="card-img"
-            />
-            <h3>Proyecto 5</h3>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem.
-            </p>
-          </div>
-          <div class="service-card">
-            <img
-              src="https://picsum.photos/seed/proj6/400/250"
-              alt="Proyecto 6"
-              class="card-img"
-            />
-            <h3>Proyecto 6</h3>
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="why-us" id="ventajas">
-        <div class="container-text">
-          <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-          <p class="lorem-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
-          <p class="lorem-text">
-            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam
-            varius, turpis et commodo pharetra, est eros bibendum elit, nec
-            luctus magna felis sollicitudin mauris.
-          </p>
-          <button class="cta-button">Solicitar Presupuesto</button>
-        </div>
-      </section>
-    </main>
-
-    <section class="contact" id="contacto">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem">
-        <h2>Nuestra Ubicación</h2>
-        <p>Vení a conocernos en Gerli</p>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.932975932822!2d-58.3846665!3d-34.6816667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcccaa02657e2f%3A0xc3f6d7a6e1d5a7d!2sJean%20Jaures%20679%2C%20Gerli%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000"
-            width="100%"
-            height="350"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
-
-        <p class="contact-info">
-          📍 Jean Jaures 679, Gerli, Buenos Aires<br />
-          📞 Teléfono: +54 (11) 4143-9557<br />
-          📧 Email: info@teleantenas.com
+        <p class="hero-subtitle">
+          Conectamos tu negocio con la mejor tecnología de comunicaciones
         </p>
       </div>
     </section>
 
-    <a
-      href="https://wa.me/5491141439557"
-      class="whatsapp-float"
-      target="_blank"
-    >
+    <section class="featured-video-section">
+      <div class="video-container-full">
+        <video
+          class="card-vid featured-vid"
+          playsinline
+          loop
+          controls
+          id="mainVideo"
+        >
+          <source src="Videos/proyecto6.mp4" type="video/mp4" />
+          Tu navegador no soporta videos.
+        </video>
+      </div>
+    </section>
+
+    <main>
+      <section class="services-overview">
+        <div id="nuestros-servicios" class="scroll-anchor"></div>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon-container">
+              <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <h3>Montaje y estructura</h3>
+            <p>
+              Instalación profesional de torres y soportes metálicos, cumpliendo
+              con los más altos estándares de seguridad.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon-container"><i class="fas fa-signal"></i></div>
+            <h3>Telecomunicación<br />4G / 5G</h3>
+            <p>
+              Despliegue, configuración y mantenimiento técnico de celdas y
+              equipos de última generación.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="icon-container"><i class="fas fa-link"></i></div>
+            <h3>Radioenlaces</h3>
+            <p>
+              Diseño, instalación y alineación de enlaces de radio para
+              transmisión de datos punto a punto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section-projects" style="position: relative">
+        <div id="trayectoria" class="scroll-anchor"></div>
+        <h2 class="section-title">Nuestra Trayectoria</h2>
+        <div class="services-grid">
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto1.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto2.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto3.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto4.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto5.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-card">
+            <video class="card-vid" playsinline controls>
+              <source src="Videos/proyecto7.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-us">
+        <div id="ventajas" class="scroll-anchor"></div>
+        <div class="container-text">
+          <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+          <div class="justification-container">
+            <p>
+              En <strong>Fm & Asociados</strong>, no solo instalamos tecnología,
+              garantizamos operatividad. Nos especializamos en convertir
+              desafíos técnicos en infraestructura eficiente y segura.
+            </p>
+            <p>
+              Nos diferenciamos por nuestra
+              <strong>transparencia y rigor profesional</strong>: entregamos
+              soluciones bajo normas internacionales, presupuestos honestos y un
+              conocimiento profundo que asegura que su red rinda al máximo desde
+              el primer día.
+            </p>
+          </div>
+          <div class="projects-cta">
+            <a
+              class="wa-link"
+              href="#"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <button class="cta-button">Solicitar Presupuesto</button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact">
+      <div id="contacto" class="scroll-anchor"></div>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem">
+        <h2 class="title-contact">Contacto</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.156543164103!2d-54.346853!3d-34.481532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDI4JzUzLjUiUyA1NMKwMjAnNDguNyJX!5e0!3m2!1ses!2suy!4v1700000000000!5m2!1ses!2suy"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+        <p class="contact-info">
+          📍 Andresito Flores, Bº Vaimaca Pirú (Mz 9 Casa 5), CP 85000, Rocha,
+          Uruguay<br />
+          📞 Teléfono: +54 9 11 3461-8549 (Arg) / +598 98 497 662 (Uy)<br />
+          📧 Email: Ignacio-ramon-medina@hotmail.com
+        </p>
+      </div>
+    </section>
+
+    <a class="wa-link whatsapp-float" href="#" target="_blank">
       <i class="fab fa-whatsapp"></i>
       <span>Chateá con nosotros</span>
     </a>
 
     <footer>
-      <p>© 2026 TeleAntenas. Todos los derechos reservados.</p>
+      <p>© 2026 Fm & Asociados. Todos los derechos reservados.</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
