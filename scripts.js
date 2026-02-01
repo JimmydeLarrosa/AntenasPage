@@ -5,6 +5,7 @@
   const mensajeBase = "Hola! Me contacto desde la web de FM & Asociados.";
 
   let paisDetectado = null;
+  
 
   async function detectarPais() {
     try {
@@ -110,4 +111,38 @@
       }
     });
   });
+  // end existing handlers
+
+  // Carousel control: play only the active slide's video
+  (function () {
+    const radios = document.querySelectorAll('input[name="carousel"]');
+
+    function videos() {
+      return Array.from(document.querySelectorAll('.carousel .slides .slide video'));
+    }
+
+    function update() {
+      const vids = videos();
+      const idx = Array.from(radios).findIndex((r) => r.checked);
+      vids.forEach((v, i) => {
+        try {
+          if (i === idx) {
+            v.play().catch(() => {});
+          } else {
+            v.pause();
+            v.currentTime = 0;
+          }
+        } catch (e) {
+          /* ignore errors */
+        }
+      });
+    }
+
+    radios.forEach((r) => r.addEventListener('change', update));
+    window.addEventListener('load', update);
+    document.addEventListener('visibilitychange', update);
+    setTimeout(update, 250);
+  })();
+
 })();
+
