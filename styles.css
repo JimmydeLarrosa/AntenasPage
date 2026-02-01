@@ -25,6 +25,7 @@ body {
   color: var(--text-dark);
   background-color: var(--bg-light);
   overflow-x: hidden;
+  position: relative;
 }
 
 /* --- NAVEGACIÓN --- */
@@ -42,7 +43,7 @@ header {
 }
 
 .nav-container {
-  max-width: 1400px; /* Incrementado para mayor apertura lateral */
+  /* max-width: 1400px; Incrementado para mayor apertura lateral */
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -62,6 +63,8 @@ header {
 .logo{
   display: flex;
   align-items: center;
+  width: 30%;
+  justify-content: center;
 }
 
 .logo-link {
@@ -85,13 +88,16 @@ header {
   letter-spacing: 0.5px;
   text-transform: none; /* Asegura Fm & Asociados en minúsculas */
 }
-
+.nav-menu{
+    width: 60%;
+}
 .nav-menu ul {
   display: flex;
   list-style: none;
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 nav a {
@@ -122,7 +128,7 @@ nav a:hover {
 .section-title {
   font-size: 2.2rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--secondary-dark);
   font-weight: 800;
   text-transform: uppercase;
@@ -166,10 +172,10 @@ nav a:hover {
 
 /* --- VIDEOS --- */
 .featured-video-section {
-  background-color: #111;
-  padding: 2rem 0;
+  background-color: #dfe6e9;
+  padding: 3rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .video-container-full {
@@ -178,8 +184,9 @@ nav a:hover {
   /* height: 300px; */
   border: 3px solid var(--accent);
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: #000;
+  width: 40%;
 }
 
 @media (min-width: 768px) {
@@ -189,7 +196,7 @@ nav a:hover {
 }
 
 .featured-vid {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   object-fit: contain;
 }
@@ -198,7 +205,11 @@ nav a:hover {
 .services-overview {
   padding: 5rem 1.5rem;
   background-color: white;
-  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.services-container{
+  width: 40%;
 }
 
 .services-grid {
@@ -254,7 +265,7 @@ nav a:hover {
 .why-us {
   background-color: #dfe6e9;
   text-align: center;
-  position: relative;
+  /* position: relative; */
   padding: 8rem 2rem; /* Mucho más margen vertical */
   min-height: 60vh; /* Altura incrementada */
   display: flex;
@@ -262,9 +273,8 @@ nav a:hover {
   justify-content: center;
 }
 
-.why-us .container-text {
-  max-width: 1000px;
-  margin: 0 auto;
+.container-text {
+  width: 30%;
 }
 
 .justification-container p {
@@ -297,7 +307,7 @@ nav a:hover {
   color: var(--text-light);
   padding: 6rem 1.5rem 8rem 1.5rem;
   text-align: center;
-  position: relative;
+  /* position: relative; */
 }
 
 .title-contact {
@@ -334,7 +344,7 @@ footer {
   background: var(--primary-dark);
   color: #777;
   text-align: center;
-  padding: 4rem;
+  padding: 2rem;
 }
 
 /* Ajustes Responsivos Finales */
@@ -356,6 +366,130 @@ footer {
     padding: 5rem 1.5rem;
   }
   .justification-container p {
-    font-size: 1.15rem;
+    font-size: 0.8rem;
   }
 }
+
+/* --- CAROUSEL CSS NATIVO (radio + labels) --- */
+/* --- CAROUSEL CSS NATIVO (radio + labels) - Reworked using absolute slides --- */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+.carousel input { display: none; }
+.carousel .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel .slide.active,
+.carousel .slide[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.carousel .slide video {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Show slide when corresponding radio is checked */
+#c1:checked ~ .slides .slide:nth-of-type(1),
+#c2:checked ~ .slides .slide:nth-of-type(2),
+#c3:checked ~ .slides .slide:nth-of-type(3),
+#c4:checked ~ .slides .slide:nth-of-type(4),
+#c5:checked ~ .slides .slide:nth-of-type(5),
+#c6:checked ~ .slides .slide:nth-of-type(6),
+#c7:checked ~ .slides .slide:nth-of-type(7) {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel .indicators {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+.carousel .indicators label {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s;
+  border: 2px solid rgba(0,0,0,0.2);
+}
+.carousel .indicators label:hover { background: rgba(255,255,255,0.8); }
+
+/* Highlight active indicator */
+#c1:checked ~ .indicators label[for="c1"],
+#c2:checked ~ .indicators label[for="c2"],
+#c3:checked ~ .indicators label[for="c3"],
+#c4:checked ~ .indicators label[for="c4"],
+#c5:checked ~ .indicators label[for="c5"],
+#c6:checked ~ .indicators label[for="c6"],
+#c7:checked ~ .indicators label[for="c7"] {
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Responsive: stack carousel full width on small screens */
+@media (max-width: 900px) {
+  .featured-video-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .container-text, .services-container {
+    width: 95%;
+    height: 100%;
+  }
+  .services-overview{
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+  .video-container-full{
+    width: 95%;
+    height: 70vh;
+  }
+  .logo-text{
+    font-size: 1rem;
+  }
+  .logo{
+    width: 100%;
+  }
+  .nav-menu{
+    display: none;
+  }
+
+  .whatsapp-float{
+    left: 0px;
+    right: auto;
+  }
+  .section-title{
+    font-size: revert;
+  }
+}
+
